@@ -65,7 +65,7 @@ app.post("/verify", function(req, res) {
   var message = req.body.message; 
   var [ens, server, user] = message.split(";"); 
   var signature = req.body.signature;  
-  var address = ethers.utils.verifyMessage( message , signature); 
+  var address = ethers.utils.verifyMessage(message, signature); 
 
   provider.resolveName(ens).then( async (ensOwner) => {
     let guild, member; 
