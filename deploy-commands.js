@@ -7,6 +7,11 @@ dotenv.config()
 const commands = [
 	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
     new SlashCommandBuilder().setName('verifyens').setDescription('Redirects you to verification page!'),
+    new SlashCommandBuilder().setName('setup').setDescription('Setup the bot before first use!')
+    .addRoleOption(option =>
+		option.setName('role')
+			.setDescription('The role to assign when verification is successful')
+			.setRequired(true))
 ]
 	.map(command => command.toJSON());
 
